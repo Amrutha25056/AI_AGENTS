@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#0b0912">
+  <title>Movie Library | MiniMovie</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}"><script defer src="{{ url_for('static', filename='js/app.js') }}"></script>
+</head>
+<body data-page="library">
+  <header class="site-header"><a class="brand" href="/"><span class="brand-mark">M</span><span>mini<span class="brand-light">movie</span></span></a><button class="nav-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false">☰</button><nav class="main-nav" aria-label="Main navigation"><a href="/">Home</a><a class="active" href="/library">Movie library</a><a class="nav-create" href="/create">＋ Create a movie</a></nav></header>
+  <main class="library-page section-wrap">
+    <div class="library-topline"><div class="page-heading"><p class="eyebrow">YOUR CREATIVE ARCHIVE</p><h1>The movie library</h1><p>Every story gets a place on the big little screen.</p></div><a class="button button-primary" href="/create">＋ New movie</a></div>
+    <div class="library-tools"><label class="search-box"><span aria-hidden="true">⌕</span><input id="movie-search" type="search" placeholder="Search movie titles..." aria-label="Search movie titles"></label><label class="filter-box"><span>Genre</span><select id="genre-filter" aria-label="Filter by genre"><option value="">All genres</option><option>Action</option><option>Comedy</option><option>Romance</option><option>Thriller</option><option>Horror</option><option>Sci-Fi</option><option>Drama</option></select></label><span id="movie-count" class="result-count"></span></div>
+    <div id="library-message" class="message" role="status" aria-live="polite"></div><div id="library-movies" class="movie-grid library-grid" aria-live="polite"><p class="loading-note">Loading your library...</p></div>
+  </main>
+  <footer class="site-footer"><a class="brand" href="/"><span class="brand-mark">M</span><span>mini<span class="brand-light">movie</span></span></a><span>Small movies. Big imagination.</span><a href="/">Back to home ↗</a></footer>
+</body>
+</html>

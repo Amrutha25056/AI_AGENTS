@@ -1,0 +1,27 @@
+[
+  {
+    "title": "Harry Potter and the Philosopher's Stone",
+    "author": "J. K. Rowling",
+    "available": true
+  },
+  {
+    "title": "The Hobbit",
+    "author": "J. R. R. Tolkien",
+    "available": false
+  },
+  {
+    "title": "The Diary of a Young Girl",
+    "author": "Anne Frank",
+    "available": true
+  },
+  {
+    "title": "Charlotte's Web",
+    "author": "E. B. White",
+    "available": false
+  },
+  {
+    "title": "The Little Prince",
+    "author": "Antoine de Saint-Exupéry",
+    "available": true
+  }
+]

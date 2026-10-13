@@ -1,0 +1,12 @@
+{
+  "Mysuru": [
+    {"name": "Mysore Palace", "cost": 100, "open": true},
+    {"name": "Brindavan Gardens", "cost": 50, "open": true},
+    {"name": "Chamundi Hills", "cost": 0, "open": true}
+  ],
+  "Ooty": [
+    {"name": "Botanical Garden", "cost": 50, "open": true},
+    {"name": "Ooty Lake", "cost": 30, "open": true},
+    {"name": "Toy Train", "cost": 250, "open": false}
+  ]
+}

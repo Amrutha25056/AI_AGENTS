@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#0b0912">
+  <title>Movie Details | MiniMovie</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}"><script defer src="{{ url_for('static', filename='js/app.js') }}"></script>
+</head>
+<body data-page="details" data-movie-id="{{ movie_id }}">
+  <header class="site-header"><a class="brand" href="/"><span class="brand-mark">M</span><span>mini<span class="brand-light">movie</span></span></a><button class="nav-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false">☰</button><nav class="main-nav" aria-label="Main navigation"><a href="/">Home</a><a class="active" href="/library">Movie library</a><a class="nav-create" href="/create">＋ Create a movie</a></nav></header>
+  <main class="details-page section-wrap"><a class="back-link" href="/library">← Back to movie library</a><div id="details-root" class="details-root"><p class="loading-note">Opening your movie...</p></div></main>
+  <footer class="site-footer"><a class="brand" href="/"><span class="brand-mark">M</span><span>mini<span class="brand-light">movie</span></span></a><span>Small movies. Big imagination.</span><a href="/library">Visit your library ↗</a></footer>
+</body>
+</html>

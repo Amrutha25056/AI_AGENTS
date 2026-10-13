@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b0912">
+  <title>MiniMovie | Your Story. Your Movie.</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  <script defer src="{{ url_for('static', filename='js/app.js') }}"></script>
+</head>
+<body data-page="home">
+  <header class="site-header">
+    <a class="brand" href="/" aria-label="MiniMovie home"><span class="brand-mark">M</span><span>mini<span class="brand-light">movie</span></span></a>
+    <button class="nav-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+    <nav class="main-nav" aria-label="Main navigation"><a class="active" href="/">Home</a><a href="/library">Movie library</a><a class="nav-create" href="/create">＋ Create a movie</a></nav>
+  </header>
+  <main>
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="eyebrow-line"></span> YOUR MINI MOVIE STUDIO</p>
+        <h1>Your Story.<br><span>Your Movie.</span></h1>
+        <p class="hero-description">Turn a spark of an idea into a little piece of cinema. Shape the story, meet your characters, and bring your classroom movie to life.</p>
+        <div class="hero-actions"><a class="button button-primary" href="/create">Create Your Movie <span aria-hidden="true">↗</span></a><a class="text-link" href="/library">Explore the library <span aria-hidden="true">→</span></a></div>
+        <div class="hero-note"><span class="note-icon">✦</span><span>Made for big ideas and small crews.</span></div>
+      </div>
+      <div class="hero-art" aria-label="Illustrated film camera and movie frames">
+        <div class="art-orbit orbit-one"></div><div class="art-orbit orbit-two"></div>
+        <div class="frame frame-back"><span>SCENE 02</span><i></i></div>
+        <div class="frame frame-front"><div class="frame-sky"></div><div class="frame-hill hill-one"></div><div class="frame-hill hill-two"></div><span>YOUR NEXT SCENE</span></div>
+        <div class="camera"><div class="camera-reel reel-a"></div><div class="camera-reel reel-b"></div><div class="camera-body"><span class="camera-lens"></span><span class="camera-light"></span></div><div class="camera-foot"></div></div>
+        <div class="art-caption"><span class="caption-dot"></span> ROLL CAMERA</div>
+      </div>
+      <div class="hero-bottom"><span>01 / IDEA TO SCREEN</span><span>SCROLL TO EXPLORE ↓</span></div>
+    </section>
+    <section class="recent-section section-wrap">
+      <div class="section-heading"><div><p class="eyebrow">THE LATEST CUTS</p><h2>Fresh from the studio</h2></div><a class="text-link" href="/library">All movies <span aria-hidden="true">→</span></a></div>
+      <div id="recent-movies" class="movie-grid compact-grid" aria-live="polite"><p class="loading-note">Loading your studio...</p></div>
+    </section>
+    <section class="process-section">
+      <div class="section-wrap process-inner">
+        <div class="section-heading"><div><p class="eyebrow">A LITTLE MOVIE MAGIC</p><h2>From “what if?” to “action!”</h2></div><p class="section-intro">Everything you need to turn a classroom idea into a story worth sharing.</p></div>
+        <div class="steps-grid">
+          <article class="step"><span class="step-number">01</span><span class="step-icon">✎</span><h3>Find your story</h3><p>Pick a genre, sketch a plot, and give your movie its own mood.</p></article>
+          <article class="step"><span class="step-number">02</span><span class="step-icon">◉</span><h3>Build your cast</h3><p>Introduce the characters who will carry your story from scene to scene.</p></article>
+          <article class="step"><span class="step-number">03</span><span class="step-icon">▤</span><h3>Write the first draft</h3><p>Generate a starter screenplay, then make it your own and share the idea.</p></article>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer"><a class="brand" href="/"><span class="brand-mark">M</span><span>mini<span class="brand-light">movie</span></span></a><span>Small movies. Big imagination.</span><a href="/library">Visit your library ↗</a></footer>
+</body>
+</html>

@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="900" viewBox="0 0 640 900" role="img" aria-labelledby="title desc">
+  <title id="title">MiniMovie poster placeholder</title><desc id="desc">A dark illustrated movie frame with a glowing spotlight.</desc>
+  <defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#171327"/><stop offset="1" stop-color="#082c39"/></linearGradient><radialGradient id="light"><stop stop-color="#f9b86a" stop-opacity=".8"/><stop offset="1" stop-color="#f9b86a" stop-opacity="0"/></radialGradient></defs>
+  <rect width="640" height="900" fill="url(#bg)"/><circle cx="332" cy="328" r="290" fill="url(#light)"/><path d="M0 660 160 510l115 105 126-180 239 245v220H0Z" fill="#10101b"/><path d="M0 722 219 586l154 120 102-89 165 136v147H0Z" fill="#080b12"/><rect x="40" y="40" width="560" height="820" rx="8" fill="none" stroke="#fff" stroke-opacity=".25" stroke-width="2"/><text x="320" y="790" text-anchor="middle" fill="#fff" font-family="Arial,sans-serif" font-size="21" letter-spacing="5" opacity=".75">YOUR STORY STARTS HERE</text>
+</svg>

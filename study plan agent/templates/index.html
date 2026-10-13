@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f8f2">
+  <title>Study Buddy | Study Plan</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <script src="{{ url_for('static', filename='script.js') }}" defer></script>
+</head>
+<body>
+  <div class="app-layout">
+    <aside class="sidebar" aria-label="Study Buddy overview">
+      <a class="brand" href="/" aria-label="Study Buddy home">
+        <span class="brand-mark" aria-hidden="true">✳</span>
+        <span>study buddy<small>your study space</small></span>
+      </a>
+
+      <div class="sidebar-intro">
+        <p class="eyebrow">A LITTLE MORE CLARITY</p>
+        <h2>One topic at a time.</h2>
+        <p>Make room for the work, and for a quick review at the end of the day.</p>
+      </div>
+
+      <section id="snapshot" class="snapshot" aria-labelledby="snapshot-title">
+        <div class="snapshot-heading">
+          <span class="snapshot-icon" aria-hidden="true">◷</span>
+          <h2 id="snapshot-title">Your plan</h2>
+        </div>
+        <div id="snapshot-content" class="snapshot-content">
+          <p class="snapshot-empty">Nothing planned yet. Your overview will appear here after we build a schedule.</p>
+        </div>
+      </section>
+
+      <button id="start-over" class="text-button" type="button" title="Clear this conversation and start again">
+        <span aria-hidden="true">↺</span> Start over
+      </button>
+
+      <div class="sidebar-footer">
+        <span class="status-dot" aria-hidden="true"></span>
+        <span>Runs locally · no account needed</span>
+      </div>
+    </aside>
+
+    <main class="workspace">
+      <header class="page-heading">
+        <div>
+          <p class="eyebrow">YOUR EXAM, MADE MANAGEABLE</p>
+          <h1>Let's make a plan.</h1>
+          <p class="page-subtitle">Tell me what you're studying. We'll take it one small step at a time.</p>
+        </div>
+        <div class="planner-badge"><span aria-hidden="true">✦</span> Study planner</div>
+      </header>
+
+      <section class="chat-panel" aria-label="Study planning conversation">
+        <div class="chat-heading">
+          <div class="assistant-avatar" aria-hidden="true">s.</div>
+          <div class="assistant-title">
+            <strong>Your study buddy</strong>
+            <span><span class="status-dot" aria-hidden="true"></span> Here to help you plan</span>
+          </div>
+          <div id="step-indicator" class="step-indicator">STEP 1 OF 3</div>
+        </div>
+
+        <div id="messages" class="messages" role="log" aria-live="polite" aria-relevant="additions">
+          <article class="message assistant-message">
+            <span class="message-speaker">STUDY BUDDY</span>
+            <p>Hi! Let's make a study plan that feels doable. Which subjects are you preparing for?</p>
+          </article>
+        </div>
+
+        <div id="controls" class="chat-controls"></div>
+        <p id="notice" class="notice" role="alert" aria-live="assertive"></p>
+      </section>
+
+      <section id="plan-results" class="plan-results" aria-labelledby="results-title" hidden>
+        <div class="results-heading">
+          <div>
+            <p class="eyebrow">YOUR STUDY ROADMAP</p>
+            <h2 id="results-title">A plan you can work with.</h2>
+          </div>
+          <span class="results-flourish" aria-hidden="true">✳</span>
+        </div>
+        <div id="plan-summary" class="plan-summary"></div>
+        <div id="schedule" class="schedule-grid"></div>
+        <p class="schedule-note">Topics are placed in the same order as the original planner. Quick revision is included when the daily study time is more than 30 minutes.</p>
+      </section>
+
+      <footer class="page-footer">
+        A thoughtful schedule, made with simple planning rules. No AI service or external account is used.
+      </footer>
+    </main>
+  </div>
+</body>
+</html>

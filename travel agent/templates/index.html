@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f6f5ef">
+  <meta name="description" content="Plan a sample trip with TravelMate AI. Explore local attractions, estimate a budget, and create a day-by-day itinerary.">
+  <title>TravelMate AI | Smart Travel Planning Agent</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <script defer src="{{ url_for('static', filename='script.js') }}"></script>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#top" aria-label="TravelMate AI home"><span class="brand-mark" aria-hidden="true">T</span><span>TravelMate<span class="brand-ai"> AI</span></span></a>
+    <nav class="main-nav" aria-label="Main navigation"><a href="#planner">Trip planner</a><a href="#destinations">Destinations</a><a href="#memory">Last saved trip</a></nav>
+    <span class="sample-pill"><span class="status-dot"></span> Local sample data</span>
+  </header>
+
+  <main id="top">
+    <section class="hero shell">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="eyebrow-icon">✳</span> YOUR NEXT GOOD IDEA STARTS HERE</p>
+        <h1>Make room<br>for the <span>detour.</span></h1>
+        <p class="hero-lede">Plan smarter trips with attractions, budgets, and personalized itineraries. A friendly local planner for your next class project or weekend daydream.</p>
+        <a class="button button-dark" href="#planner">Plan a trip <span aria-hidden="true">↓</span></a>
+        <p class="hero-disclaimer"><span aria-hidden="true">ⓘ</span> Sample data only. Prices and opening status are not live or verified.</p>
+      </div>
+      <div class="hero-art" aria-label="Illustration of mountain peaks and a winding travel route">
+        <div class="sun"></div><div class="route route-back"></div><div class="mountain mountain-back"></div><div class="mountain mountain-front"></div><div class="route-pin pin-one"><span></span></div><div class="route-pin pin-two"><span></span></div><div class="route-route-label">A GOOD PLACE<br>TO GET LOST</div><div class="art-coordinate">12° 18' N &nbsp; 76° 39' E</div>
+      </div>
+      <div class="hero-index"><span>TRAVEL NOTES / 01</span><span>LOCAL DEMO PLANNER</span></div>
+    </section>
+
+    <section id="planner" class="planner-section shell section-anchor">
+      <div class="section-title-row"><div><p class="eyebrow">MAKE A PLAN</p><h2>Where to, traveler?</h2></div><span class="section-side-note">01 — TRIP DETAILS</span></div>
+      <div class="planner-layout">
+        <form id="trip-form" class="planner-form" novalidate>
+          <div class="form-header"><span class="form-icon" aria-hidden="true">↗</span><div><h3>Build your trip</h3><p>A few details help map the day.</p></div></div>
+          <label for="destination">Choose a sample destination</label><select id="destination" name="destination"><option value="">Choose a destination</option></select>
+          <label for="destination-custom">Or type your own destination</label><input id="destination-custom" name="destination-custom" type="text" placeholder="Try Paris, Bali, Goa..." autocomplete="off">
+          <div class="form-pair"><div><label for="days">Days</label><input id="days" name="days" type="number" min="1" max="60" step="1" value="2" required></div><div><label for="budget">Total budget <span class="currency">₹</span></label><input id="budget" name="budget" type="number" min="0" step="1" value="5000" required></div></div>
+          <label for="preference">Your travel style</label><select id="preference" name="preference" required><option value="Nature">Nature</option><option value="History">History</option><option value="Relaxation">Relaxation</option></select>
+          <div class="form-actions"><button id="generate-plan" class="button button-primary" type="submit"><span class="submit-label">Generate My Trip</span><span class="button-arrow" aria-hidden="true">→</span></button><button id="reset-planner" class="button button-quiet" type="button">Reset planner</button></div>
+          <p id="form-message" class="message" role="status" aria-live="polite"></p>
+        </form>
+        <aside class="planner-aside"><div class="aside-number">A</div><p class="eyebrow">THE TRAVELMATE PROMISE</p><h3>Thoughtful plans.<br>Honest estimates.</h3><p>We use only the local sample attractions on this page. No live prices, availability checks, bookings, or payments happen here.</p><div class="aside-rule"></div><div class="aside-stat"><span>3</span><span>sample stops<br>per destination</span></div></aside>
+      </div>
+    </section>
+
+    <section id="plan-results" class="results-section shell section-anchor" hidden>
+      <div class="section-title-row"><div><p class="eyebrow">YOUR TRIP, MAPPED</p><h2 id="results-heading">The plan</h2></div><span class="section-side-note">02 — COST & ITINERARY</span></div>
+      <div id="budget-banner" class="budget-banner"></div>
+      <div id="budget-cards" class="budget-cards"></div>
+      <div class="estimate-note">All amounts are estimates calculated from the simple demonstration rules below.</div>
+      <div class="results-lower-grid"><section class="result-panel"><div class="panel-title"><div><p class="eyebrow">ONE DAY AT A TIME</p><h3>Your itinerary</h3></div><span class="panel-symbol">⌁</span></div><div id="itinerary-list" class="itinerary-list"></div><div id="removed-list" class="removed-list" hidden></div></section>
+        <section class="result-panel approval-panel"><div class="panel-title"><div><p class="eyebrow">HUMAN-IN-THE-LOOP DEMO</p><h3>Booking approval</h3></div><span class="panel-symbol">✓</span></div><p>This planner never books or pays. You can try the approval flow as a safe demonstration.</p><button id="request-approval" class="button button-outline" type="button">Request Booking Approval</button><div id="approval-choice" class="approval-choice" hidden><p>Approve the demo step? This will <strong>not</strong> make a reservation or payment.</p><div><button class="button button-primary" id="approve-yes" type="button">Yes, approve demo</button><button class="button button-quiet" id="approve-no" type="button">No, decline</button></div></div><p id="approval-message" class="message" role="status" aria-live="polite"></p></section>
+      </div>
+    </section>
+
+    <section id="destinations" class="destinations-section section-anchor">
+      <div class="shell"><div class="section-title-row"><div><p class="eyebrow">A SMALL LOCAL ATLAS</p><h2>Start with a place</h2></div><span class="section-side-note">SAMPLE DATA / NOT LIVE</span></div><p class="section-description">The attraction list and status shown below are classroom demonstration data only, not current prices or opening information.</p><div id="destination-grid" class="destination-grid" aria-live="polite"><p class="loading-note">Loading local destinations...</p></div><p class="data-footnote"><span>ⓘ</span> Sample entry costs and open/closed statuses only. Always confirm real-world details independently.</p></div>
+    </section>
+
+    <section id="memory" class="memory-section section-anchor shell"><div class="memory-card"><div class="memory-copy"><p class="eyebrow">PICK UP WHERE YOU LEFT OFF</p><h2>Last saved trip</h2><p>Your most recent successful trip plan is stored locally on this computer.</p><button id="refresh-memory" class="button button-quiet" type="button">↻ Refresh trip memory</button></div><div id="memory-content" class="memory-content" aria-live="polite"><p class="loading-note">Checking your saved trip...</p></div></div></section>
+  </main>
+
+  <footer class="footer shell"><a class="brand" href="#top"><span class="brand-mark">T</span><span>TravelMate<span class="brand-ai"> AI</span></span></a><p>Local demo planner · No real-time data or bookings</p><a href="#top">Back to top ↑</a></footer>
+</body>
+</html>
